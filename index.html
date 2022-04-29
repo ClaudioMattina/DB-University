@@ -8,7 +8,7 @@
     <title>soluzioni esercizio</title>
 </head>
 <body>
-    <h1 class="titoli">PRIMA SCHEDA</h1>
+    <h1 class="titoli">PRIMA SCHEDA es. 28/04</h1>
     <h1>1. SELEZIONARE TUTTI GLI STUDENTI NATI NEL 1990 (160)</h1>
     <p>SELECT * FROM `students` WHERE YEAR(`date_of_birth`) = 1990 </p>
     <h1>2. SELEZIONARE TUTTI I CORSI CHE VALGONO PIù DI 10 PUNTI (479)</h1>
@@ -26,7 +26,7 @@
     <h1>8. Quanti sono gli insegnanti che non hanno un numero di telefono? (50) </h1>
     <p>SELECT * FROM `teachers` WHERE `phone` IS NULL </p>
 
-    <h1 class="titoli">SECONDA SCHEDA</h1>
+    <h1 class="titoli">SECONDA SCHEDA es. 28/04</h1>
 
     <h1>1. Contare quanti iscritti ci sono stati ogni anno</h1>
     <p>SELECT COUNT('id'), YEAR(`enrolment_date`) FROM `students` GROUP BY YEAR(`enrolment_date`)  </p>
@@ -36,5 +36,13 @@
     <p>SELECT AVG(`vote`) FROM `exam_student` </p>
     <h1>4. Contare quanti corsi di laurea ci sono per ogni dipartimento</h1>
     <p>SELECT COUNT(*), `department_id` FROM `degrees` GROUP BY `department_id` </p>
+
+    <h1 class="titoli">TERZA SCHEDA es. 29/04</h1>
+    <h1>1. Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia</h1>
+    <p>SELECT `students`.`name`,`students`.`surname` FROM `students` JOIN `degrees` ON `degrees`.id = `students`.`degree_id` WHERE `degrees`.`name`= 'Corso di Laurea in Economia' </p>
+    <h1>2. Selezionare tutti i Corsi di Laurea del Dipartimento di Neuroscienze</h1>
+    <p>SELECT `degrees`.`name` FROM `degrees` JOIN `departments` ON `degrees`.id = `degrees`.`department_id` WHERE `departments`.`name` = 'Dipartimento di Neuroscienze' </p>
+    <h1>3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)</h1>
+    <p></p>
 </body>
 </html>
